@@ -1,0 +1,8 @@
+<div class="container dashrow py-5">
+    <select id="sp-saved-hashtags" class="selectpicker float-end" data-size="5" multiple title="From all hashtags">
+        {% for hashtag in hashtags %}
+        <option value="{{ hashtag }}">{{ hashtag }}</option>
+        {% endfor %}
+    </select>
+    <div id="insert_saved_tweets" class="row row-cols-1 row-cols-md-2 mt-5"></div>
+</div>

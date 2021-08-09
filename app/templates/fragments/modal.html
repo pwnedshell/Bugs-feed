@@ -1,0 +1,101 @@
+<div class="modal fade" id="config_modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="{{ url_for('static', filename='assets/img/configuration.svg') }}" width="28">
+                <h4 class="ms-2 modal-title">Configuration</h4>
+                <button type="button" class="btn-close align-icon" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mt-3">
+                    <h6 class="mb-4">Vulnerabilities & Papers</h6>
+                    <div class="col-12 mb-4">
+                        <img class="d-inline ms-1 me-2" title="Auto Refresh time" src="{{ url_for('static', filename='assets/img/clock.svg') }}" width="18">
+                        <select id="tables_scheduler" class="selectpicker" data-size="5" title="Vulnerabilities & Papers">
+                            <option value="1">1 hour</option>
+                            <option value="3">3 hours</option>
+                            <option value="4.5">4.5 hours</option>
+                            <option value="6">6 hours</option>
+                            <option value="12">12 hours</option>
+                            <option value="24">24 hours</option>
+                            <option value="999999">Never</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <img class="d-inline ms-1 me-2" title="Use DuckDuckGo as search engine" src="{{ url_for('static', filename='assets/img/duck.svg') }}" width="18">
+                        <div class="custom-control custom-switch custom-switch-lg custom-switch-stack d-inline" style="font-size: inherit">
+                            <input type="checkbox" checked="checked" class="custom-control-input" id="google_switch">
+                            <label class="custom-control-label" for="google_switch">&nbsp;</label>
+                        </div>
+                        <img class="d-inline" title="Use Google as search engine" src="{{ url_for('static', filename='assets/img/google.svg') }}" width="18">
+                    </div>
+                    <div class="col-6">
+                        <img class="d-inline me-3 align-icon" title="Left align on tables" src="{{ url_for('static', filename='assets/img/left-align.svg') }}" width="18">
+                        <div class="custom-control custom-switch custom-switch-lg custom-switch-stack d-inline" style="font-size: inherit">
+                            <input type="checkbox" checked="checked" class="custom-control-input" id="align_switch">
+                            <label class="custom-control-label" for="align_switch">&nbsp;</label>
+                        </div>
+                        <img class="d-inline ms-1 align-icon" title="Center align on tables" src="{{ url_for('static', filename='assets/img/center-align.svg') }}" width="18">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <h6 class="mb-3">Media</h6>
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <img class="d-inline ms-1 me-2" title="Auto Refresh time" src="{{ url_for('static', filename='assets/img/clock.svg') }}" width="18">
+                            <select id="media_scheduler" class="selectpicker" data-size="5" title="Media">
+                                <option value="1">1 hour</option>
+                                <option value="3">3 hours</option>
+                                <option value="4.5">4.5 hours</option>
+                                <option value="6">6 hours</option>
+                                <option value="12">12 hours</option>
+                                <option value="24">24 hours</option>
+                                <option value="999999">Never</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs nav-tabs-md nav-tabs-line">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-inverted active" data-bs-toggle="tab" id="channels_tab" href="#channels" style="background-color:inherit;">Channels</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-inverted" data-bs-toggle="tab" id="hashtags_tab" href="#hashtags" style="background-color:inherit;">Hashtags</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="channels" role="tabpanel" aria-labelledby="channels_tab">
+                            <div class="p-5">
+                                <a class="btn btn-primary btn-sm" data-bs-toggle="collapse" href="#youtube_help" aria-expanded="false" aria-controls="youtube_help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8s3.589-8,8-8 s8,3.589,8,8S16.411,20,12,20z">
+                                        </path>
+                                        <path d="M11 11H13V17H11zM11 7H13V9H11z"></path>
+                                    </svg>
+                                </a>
+                                <div class="collapse" id="youtube_help">
+                                    <div class="card card-body my-3">
+                                        <img class="d-inline ms-1" src="{{ url_for('static', filename='assets/img/videos_username.png') }}" width="400">
+                                        <img class="d-inline ms-1" src="{{ url_for('static', filename='assets/img/videos_url.png') }}" width="400">
+                                        <br> <span>Please select the <strong> youtube channel id </strong> from the youtube url</span>
+                                        <br> <span>You can also use a friendly username (right column) so you can lead with the weird channel's ids</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4" id="channels_row">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="hashtags" role="tabpanel" aria-labelledby="hashtags_tab">
+                            <div class="p-5">
+                                <div class="row" id="hashtags_row">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

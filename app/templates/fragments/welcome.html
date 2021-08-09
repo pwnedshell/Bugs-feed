@@ -1,0 +1,29 @@
+<div class="row py-3 mb-5">
+    <div class="col-md-5 col-sm-8">
+        <div class="ms-3 p-3 timedate">
+            <svg style="position: absolute;">
+                <line x1="0" y1="0" x2="0" y2="130" style="stroke:var(--sun);stroke-width:5" />
+                Sorry, your browser does not support inline SVG.
+            </svg>
+            <div class="ms-3">
+                <span id="mon">January</span>
+                <span id="d">1</span>,
+                <span id="y">0</span><br />
+                <span id="h">12</span> :
+                <span id="m">00</span> :
+                <span id="s">00</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-2 text-end py-5 search-button">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#search_offcanvas" aria-controls="search_offcanvas">Search</button>
+    </div>
+</div>
+<div class="row pt-4">
+    <div class="col-6">
+        <canvas id="saved_chart" width="400" height="400"></canvas>
+    </div>
+    <div class="col-6">
+        <canvas id="todays_chart" width="400" height="400"></canvas>
+    </div>
+</div>

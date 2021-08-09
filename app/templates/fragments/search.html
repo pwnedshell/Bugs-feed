@@ -1,0 +1,154 @@
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="search_offcanvas" aria-labelledby="offcanvas_label">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvas_label">
+            <img src="{{ url_for('static', filename='assets/img/search.svg') }}" class="mb-1" width="25" height="25"> Search
+        </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+        <div class="row pt-2">
+            <div class="col-7">
+                <div class="form-group mb-md-4 mt-3">
+                    <a href="#" id="search_button" class="btn btn-primary control-icon control-icon-right">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <input type="text" id="search" placeholder="Search" class="form-control form-line-control">
+                </div>
+            </div>
+            <div class="col-5">
+                <ul id="searched_type" class="nav nav-tabs nav-tabs-lg nav-tabs-rounded justify-content-center mt-1" role="tablist">
+                </ul>
+            </div>
+            <div class="col-12 pt-2">
+                <div class="tab-content">
+                    <div class="tab-pane search-tab-pane  fade" id="searched_media" role="tabpanel" aria-labelledby="searched_media_tab">
+                        <div class="container">
+                            <ul id="searched_media_tab_list" class="nav nav-tabs nav-tabs-lg nav-tabs-rounded justify-content-center mt-2" role="tablist">
+                            </ul>
+                            <div id="searched_media_pane_list" class="tab-content">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane search-tab-pane  fade" id="searched_vulnerabilities" role="tabpanel" aria-labelledby="searched_vulnerabilities_tab">
+                        <div class="container">
+                            <ul id="searched_vulnerabilities_tab_list" class="nav nav-tabs nav-tabs-lg nav-tabs-rounded justify-content-center mt-2" role="tablist">
+                            </ul>
+                            <div class="tab-content mt-5">
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_hackerone" role="tabpanel" aria-labelledby="searched_hackerone_tab">
+                                    <table id="searched_hackerone_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Product</th>
+                                                <th>Level</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_bugcrowd" role="tabpanel" aria-labelledby="searched_bugcrowd_tab">
+                                    <table id="searched_bugcrowd_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Program</th>
+                                                <th>Priority</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_exploitdb" role="tabpanel" aria-labelledby="searched_exploitdb_tab">
+                                    <table id="searched_exploitdb_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Category</th>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_cve" role="tabpanel" aria-labelledby="searched_cve_tab">
+                                    <table id="searched_cve_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Cve</th>
+                                                <th>Description</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane search-tab-pane  fade" id="searched_papers" role="tabpanel" aria-labelledby="searched_papers_tab">
+                        <div class="container">
+                            <ul id="searched_papers_tab_list" class="nav nav-tabs nav-tabs-lg nav-tabs-rounded justify-content-center mt-2" role="tablist">
+                            </ul>
+                            <div class="tab-content mt-5">
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_exploitdbsp" role="tabpanel" aria-labelledby="searched_exploitdbsp_tab">
+                                    <table id="searched_exploitdbsp_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Platform</th>
+                                                <th>Name</th>
+                                                <th>Author</th>
+                                                <th>Language</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_nist" role="tabpanel" aria-labelledby="searched_nist_tab">
+                                    <table id="searched_nist_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Serie</th>
+                                                <th>Name</th>
+                                                <th>Number</th>
+                                                <th>Status</th>
+                                                <th>Language</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane search-tab-pane  fade table-responsive" id="searched_oxford" role="tabpanel" aria-labelledby="searched_oxford_tab">
+                                    <table id="searched_oxford_table" class="table table-hover align-middle text-center">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Author</th>
+                                                <th>Date</th>
+                                                <th>Search</th>
+                                                <th>Save</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

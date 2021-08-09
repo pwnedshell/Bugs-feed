@@ -1,0 +1,10 @@
+<div class="dashrow py-5">
+    <button type="button" id="tweets_button" class="btn btn-primary mb-5">Refresh</button>
+    <select id="sp-hashtags" class="selectpicker float-end" data-size="5" multiple title="From all hashtags">
+        {% for hashtag in hashtags %}
+        <option value="{{ hashtag }}">{{ hashtag }}</option>
+        {% endfor %}
+    </select>
+    <div class="row row-cols-1 row-cols-md-2 mt-5" id="insert_tweets">
+    </div>
+</div>

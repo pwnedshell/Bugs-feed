@@ -1,0 +1,11 @@
+<div class="dashrow py-5">
+    <button type="button" id="news_button" class="btn btn-primary mb-5">Refresh</button>
+    <select id="sp-webs" class="selectpicker float-end" data-size="5" multiple title="From all sources">
+        {% for web in webs %}
+        <option value="{{ web }}">{{ web }}</option>
+        {% endfor %}
+    </select>
+    <div id="insert_news" class="row row-cols-1 row-cols-md-3 g-4 pb-6">
+
+    </div>
+</div>

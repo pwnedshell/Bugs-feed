@@ -1,0 +1,1 @@
+jQuery.extend(jQuery.fn.dataTableExt.oSort,{"date-eu-pre":function(e){if(!(e=e.replace(" ","")))return 0;var t,r=e.split(/[\.\-\/]/);t=r[2]?r[2]:0;var n=r[1];1==n.length&&(n=0+n);var u=r[0];return 1==u.length&&(u=0+u),1*(t+n+u)},"date-eu-asc":function(e,t){return e<t?-1:e>t?1:0},"date-eu-desc":function(e,t){return e<t?1:e>t?-1:0}});

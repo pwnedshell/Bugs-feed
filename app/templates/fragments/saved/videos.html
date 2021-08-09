@@ -1,0 +1,8 @@
+<div class="container dashrow py-5">
+    <select id="sp-saved-channels" class="selectpicker float-end" data-size="5" multiple title="From all channels">
+        {% for channel in channels2 %}
+        <option value="{{ channel[0] }}">{{ channel[1] }}</option>
+        {% endfor %}
+    </select>
+    <div id="insert_saved_videos" class="row mt-5 pb-6"></div>
+</div>

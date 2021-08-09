@@ -1,0 +1,62 @@
+version = "v1.0.0"
+init = true
+google = false
+align = "text-start"
+refresh_media_time = 1.0
+refresh_tables_time = 4.5
+
+[media_items]
+news = "webs"
+videos = "channels"
+tweets = "hashtags"
+
+[news_items]
+sources = [ "Hacker Noon", "Hakin9", "Securelist", "ShiftLeft", "The Hacker News", "The Hacking Articles", "Pentest Lab",]
+functions = [ "hackernoon", "hakin9", "securelist", "shiftleft", "thehackernews", "thehackingarticles", "pentestlab",]
+
+[videos_items]
+channels = [ "UCVeW9qkBjo3zosnqUbG7CFw", "UCa6eh7gCkpPo5XXUDfygQQA", "UCW6MNdOsqv2E9AjQkv9we7A", "UClcE-kVhqyiHCcjYwcpfj9w", "UCZDyl7G-Lq-EMVO8PfDFp9g", "UC0ZTPkdxlAKf-V33tqXwi3Q", "UCCkVMojdBWS-JtH7TliWkVg", "UCtGLeKomT06x3xZ2SZp2l9Q",]
+usernames = [ "John Hammond", "Ippsec", "PwnFunction", "LiveOverflow", "BugBounty Reports Explained", "HackerSploit", "GynvaelEN", "247CTF",]
+
+[tweets_items]
+hashtags = [ "#bugbountytips", "#hacking", "#pentest", "#zeroday", "#cybersecurity", "#cybersec", "#bugbounty",]
+
+[search_items.news]
+primary = "name"
+secondary = "description"
+
+[search_items.videos]
+primary = "name"
+secondary = "username"
+
+[search_items.tweets]
+primary = "tweet"
+secondary = "user"
+
+[search_items.hackerone]
+primary = "name"
+secondary = "product"
+
+[search_items.bugcrowd]
+primary = "name"
+secondary = "program"
+
+[search_items.exploitdb]
+primary = "name"
+secondary = "name"
+
+[search_items.cve]
+primary = "name"
+secondary = "description"
+
+[search_items.exploitdbsp]
+primary = "name"
+secondary = "author"
+
+[search_items.nist]
+primary = "name"
+secondary = "serie"
+
+[search_items.oxford]
+primary = "name"
+secondary = "author"

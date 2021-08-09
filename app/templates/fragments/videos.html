@@ -1,0 +1,11 @@
+<div class="dashrow py-5">
+    <button type="button" id="videos_button" class="btn btn-primary mb-5">Refresh</button>
+    <select id="sp-channels" class="selectpicker float-end" data-size="5" multiple title="From all channels">
+        {% for channel in channels %}
+        <option value="{{ channel[0] }}">{{ channel[1] }}</option>
+        {% endfor %}
+    </select>
+    <div class="row pb-6" id="insert_videos">
+
+    </div>
+</div>

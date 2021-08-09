@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  api:
+    container_name: python-api
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - mongo
+    build:
+      context: .
+      shm_size: "2gb"
+    shm_size: "2gb"
+    command: bash -c "chmod +x /api/bin/geckodriver && service tor start && python /api/app/app.py"
+    volumes:
+      - .:/api
+    ports:
+      - "${PORT}:${PORT}"
+    links:
+      - "mongo:docker.mongo.db"
+
+  mongo:
+    container_name: mongo-db
+    restart: unless-stopped
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "password"
+      MONGO_INITDB_DATABASE: feeds
+      MONGODB_DATA_DIR: /data/db
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodata:

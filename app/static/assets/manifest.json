@@ -1,0 +1,22 @@
+{
+    "name": "Bug's feed",
+    "short_name": "Bug's feed",
+    "start_url": ".",
+    "display": "standalone",
+    "description": "Bug's feed is a local hosted portal where you can search for the latest news, videos, CVEs, vulnerabilities... It's implemented as a PWA application so you can get rid of the explorer and use it as a desktop application. Navigate through different tabs and take a look to the latest bugs or search in all of them at once. It comes with a configuration pane in which you can modify hashtags and video channels to your own belong.",
+    "icons": [{
+            "src": "img/icon/manifest-icon-192.jpg",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "img/icon/manifest-icon-512.jpg",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "background_color": "#fafafa",
+    "theme_color": "#fafafa"
+}
