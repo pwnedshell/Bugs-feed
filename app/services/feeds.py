@@ -537,17 +537,15 @@ def nist():
         driver.quit()
         return papers
 
-# puedes definir el User-Agent?
 def oxford():
     url = "https://academic.oup.com/cybersecurity/search-results?f_ContentType=Journal+Article&fl_SiteID=5188&page=1&sort=Date+%e2%80%93+Newest+First"
     papers = []
     logging.info("Scrapping Oxford papers")
-    driver = get_driver()
+    driver = get_driver(False)
     driver.set_script_timeout(60)
     try:
-        driver.get(url) 
         driver.get(url)
-        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "al-title")))
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, "al-title")))
         html = driver.find_element(By.ID, "ContentColumn").get_attribute("innerHTML")
         elements = BeautifulSoup(html, features="html.parser")
         for element in elements.find_all("div", {"class": "sr-list al-article-box al-normal clearfix"}):

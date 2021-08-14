@@ -1,4 +1,9 @@
-# Bug's feed release! 🎉
+## 🐛 Bug fixes
+- Oxford scrapping
+- Firefox package
+
+## 💬 Other
+- Version control improved
 
 <!-- ## 🚀 Features
 - 

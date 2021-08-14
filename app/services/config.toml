@@ -1,4 +1,4 @@
-version = "v1.0.0"
+version = "v1.0.1"
 init = true
 google = false
 align = "text-start"

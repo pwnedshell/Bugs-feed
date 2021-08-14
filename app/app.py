@@ -269,7 +269,7 @@ def get_saved():
 
 @app.route("/api/configs/checkVersion", methods=["GET"])
 def checkVersion():
-    return jsonify(str(feeds_service.github_version() == config.get("version")))
+    return jsonify({"version": config.get("version"), "old":str(feeds_service.github_version() == config.get("version"))})
 
 @app.route("/api/configs/checkInit", methods=["GET", "PUT"])
 def checkInit():

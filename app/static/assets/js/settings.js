@@ -6,7 +6,8 @@ const currentMonth = new Date().getMonth();
 //""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/
 
 $.get("/api/configs/checkVersion").done(function(data) {
-    if (data != "True") {
+    $("#version").html(data.version)
+    if (data.old != "True") {
         $("#version").append(" <a href='https://github.com/PwnedShell/Bugs-feed/releases/latest' style='color:var(--red)' target='_blank' rel='noopener noreferrer'>New version available</a>")
     }
 })

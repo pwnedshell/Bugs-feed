@@ -49,7 +49,7 @@ Bug's feed is a docker containered <a href="https://pypi.org/project/Flask/">Fla
 Most of requests go through <a href="https://www.torproject.org/">Tor</a> and with a random user agent.
 </p>
 
-> Except those to twitter, youtube and bugcrowd (this may change in the future).
+> Except those to twitter, youtube, oxford and bugcrowd (this may change in the future).
 
 <p align="center">
     <img src="app/static/assets/img/Demo.gif" alt="Gif" width="700">
