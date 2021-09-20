@@ -1,4 +1,4 @@
-import time, os, traceback, random, twint, hashlib, feedparser, re, requests, threading, logging
+import os, traceback, random, twint, hashlib, feedparser, re, requests, threading, logging
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from selenium import webdriver
