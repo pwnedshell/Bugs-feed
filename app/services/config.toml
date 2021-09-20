@@ -11,12 +11,12 @@ videos = "channels"
 tweets = "hashtags"
 
 [news_items]
-sources = [ "Hacker Noon", "Hakin9", "Securelist", "ShiftLeft", "The Hacker News", "The Hacking Articles", "Pentest Lab",]
-functions = [ "hackernoon", "hakin9", "securelist", "shiftleft", "thehackernews", "thehackingarticles", "pentestlab",]
+sources = [ "Hacker Noon", "Hakin9", "Intigriti", "Securelist", "ShiftLeft", "The Hacker News", "The Hacking Articles", "Pentest Lab",]
+functions = [ "hackernoon", "hakin9", "intigriti", "securelist", "shiftleft", "thehackernews", "thehackingarticles", "pentestlab",]
 
 [videos_items]
-channels = [ "UCVeW9qkBjo3zosnqUbG7CFw", "UCa6eh7gCkpPo5XXUDfygQQA", "UCW6MNdOsqv2E9AjQkv9we7A", "UClcE-kVhqyiHCcjYwcpfj9w", "UCZDyl7G-Lq-EMVO8PfDFp9g", "UC0ZTPkdxlAKf-V33tqXwi3Q", "UCCkVMojdBWS-JtH7TliWkVg", "UCtGLeKomT06x3xZ2SZp2l9Q",]
-usernames = [ "John Hammond", "Ippsec", "PwnFunction", "LiveOverflow", "BugBounty Reports Explained", "HackerSploit", "GynvaelEN", "247CTF",]
+channels = [ "UCVeW9qkBjo3zosnqUbG7CFw", "UCa6eh7gCkpPo5XXUDfygQQA", "UCW6MNdOsqv2E9AjQkv9we7A", "UClcE-kVhqyiHCcjYwcpfj9w", "UCZDyl7G-Lq-EMVO8PfDFp9g", "UC0ZTPkdxlAKf-V33tqXwi3Q", "UCCkVMojdBWS-JtH7TliWkVg", "UCtGLeKomT06x3xZ2SZp2l9Q", "UC0ArlFuFYMpEewyRBzdLHiw",]
+usernames = [ "John Hammond", "Ippsec", "PwnFunction", "LiveOverflow", "BugBounty Reports Explained", "HackerSploit", "GynvaelEN", "247CTF", "The Cyber Mentor",]
 
 [tweets_items]
 hashtags = [ "#bugbountytips", "#hacking", "#pentest", "#zeroday", "#cybersecurity", "#cybersec", "#bugbounty",]

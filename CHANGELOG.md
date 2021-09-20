@@ -1,9 +1,6 @@
-## 🐛 Bug fixes
-- Oxford scrapping
-- Firefox package
-
-## 💬 Other
-- Version control improved
+## 🦗 Welcome to
+- Intigriti rss
+- The Cyber Mentor channel
 
 <!-- ## 🚀 Features
 - 

@@ -189,6 +189,21 @@ def pentestlab(news):
         news.append({"name": name, "description": description, "link": link, "web": "Pentest Lab", "date": date, "lego": get_lego(name), "color": get_color(name), "saved": False})
     logging.info("Pentest Lab scrapped")
 
+#【 INTIGRITI 】
+def intigriti(news):
+    feedparser.USER_AGENT = UserAgent().firefox
+    last_intigriti = feedparser.parse("https://blog.intigriti.com/feed/")
+    logging.info("Scrapping Pentest Lab")
+    for article in last_intigriti.entries:
+        name = article.title
+        link = article.link
+        html_description = BeautifulSoup(article.description, features="html.parser")
+        description = " ".join(html_description.get_text().split(" ")[:50])
+        raw_date = article.published.split(", ")[1].rsplit(" ", 1)[0]
+        date = datetime.strptime(raw_date, "%d %b %Y %H:%M:%S")
+        news.append({"name": name, "description": description, "link": link, "web": "Intigriti", "date": date, "lego": get_lego(name), "color": get_color(name), "saved": False})
+    logging.info("Intigriti scrapped")
+
 #                   __    
 #(\,---------------'()'--o
 # (_    _ VIDEOS _    /~" 
