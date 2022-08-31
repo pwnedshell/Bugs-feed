@@ -1,4 +1,4 @@
-Flask==1.0.2
+Flask==2.2.2
 Flask-PyMongo==2.2.0
 Flask-Cors==3.0.10
 selenium==3.141.0
@@ -7,6 +7,7 @@ pymongo==3.11.4
 feedparser==6.0.8
 beautifulsoup4==4.9.3
 toml==0.10.2
+Jinja2==3.1.2
 apscheduler==3.7.0
 flask-compress==1.10.1
 fake-useragent==0.1.11

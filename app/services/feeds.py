@@ -229,9 +229,16 @@ def youtube_thread(channel, videos):
     try:
         driver.get(url)
         try:
-            driver.find_element(By.XPATH, "//*[text()='I agree']").click()
-        except Exception:
-            pass
+            consent = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
+                (By.XPATH, "//input[@type='submit' and @value='I agree']")))
+            consent.submit()
+        except:
+            try:
+                consent = driver.find_element(By.CSS_SELECTOR, 
+                    'button.VfPpkd-LgbsSe.VfPpkd-LgbsSe-OWXEXe-k8QpJ.VfPpkd-LgbsSe-OWXEXe-dgl2Hf.nCP5yc.AjY5Oe.DuMIQc.IIdkle')
+                consent.click()
+            except:
+                pass
         driver.implicitly_wait(10)
         driver.find_elements(By.CLASS_NAME, "tp-yt-paper-tab")[1].click()
         driver.implicitly_wait(5)
@@ -418,7 +425,7 @@ def bugcrowd():
                 priority = element.find("span", {"class": "bc-badge"}).text
                 if priority not in ["P1", "P2", "P3", "P4"]:
                     continue
-                name = element.find("p", {"class": "bc-helper-nomargin"}).find("a")
+                name = element.find("div", {"class": "bc-crowdstream-item__wrapper"}).find("a")
                 link = "https://bugcrowd.com" + name.get("href")
                 name = name.text
                 raw_date = element.find("span", {"class": "bc-crowdstream-item__date"}).text.split("on ", 1)[1]
@@ -428,7 +435,7 @@ def bugcrowd():
                 program = program.text
                 bugcrowd_list.append({"name": name, "link": link, "program": program, "program_link": program_link, "priority": priority, "date": date, "saved": False})
             except Exception:
-                pass
+                traceback.print_exc()
     except Exception:
         traceback.print_exc()
     finally:
@@ -446,11 +453,12 @@ def cve():
     try:
         driver.get(url)
         WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "article[role='article']")))
+        driver.implicitly_wait(7)
         html = driver.find_element(By.XPATH, "//div[@aria-label='Timeline: CVE’s Tweets']").get_attribute("innerHTML")
         elements = BeautifulSoup(html, features="html.parser")
         for element in elements.find("div").findAll("article"):
             try:
-                text = element.find_all("span", {"class": ["css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"]})[4].text.split(" ", 1)
+                text = element.find_all("span", {"class": ["css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"]})[3].text.split(" ", 1)
                 name = text[0]
                 description = text[1]
                 raw_date = element.find("time").get("datetime")
@@ -458,7 +466,7 @@ def cve():
                 link = element.find("a", {"dir": "ltr"}).get("href")
                 cve_list.append({"name": name, "link": link, "description": description, "date": date, "saved": False})
             except Exception:
-                pass
+                traceback.print_exc()
     except Exception:
         traceback.print_exc()
     finally:
